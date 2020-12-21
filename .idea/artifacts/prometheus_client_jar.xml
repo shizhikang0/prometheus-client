@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact name="prometheus-client:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/prometheus_client_jar</output-path>
+    <root id="root">
+      <element id="archive" name="prometheus-client.jar">
+        <element id="module-output" name="prometheus-client" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="commons-lang3-3.11" />
+        <element id="library" level="project" name="fastjson-1.2.75" />
+        <element id="library" level="project" name="log4j-api-2.12.1" />
+        <element id="library" level="project" name="log4j-core-2.12.1" />
+        <element id="library" level="project" name="log4j-slf4j-impl-2.12.1" />
+        <element id="library" level="project" name="lombok-1.18.16" />
+        <element id="library" level="project" name="netty-all-4.1.54.Final" />
+        <element id="library" level="project" name="ormlite-core-5.0" />
+        <element id="library" level="project" name="ormlite-jdbc-5.0" />
+        <element id="library" level="project" name="protobuf-java-3.13.0" />
+        <element id="library" level="project" name="sqlite-jdbc-3.32.3.2" />
+        <element id="library" level="project" name="sqljdbc4-4.0" />
+      </element>
+    </root>
+  </artifact>
+</component>

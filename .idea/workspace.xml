@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="prometheus-client:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1a0246f3-486a-483c-811c-f1463a646c5a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="202012" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="202012" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="202012" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\DevelopEnvi\mavenRepo" />
+        <option name="mavenHome" value="D:/DevelopEnvi/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\DevelopEnvi\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1kuL54fafdET1CjuZtqNCuGOeA8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.shi.prometheus.protobuf" />
+      <recent name="com.shi.prometheus.db.callback.impl" />
+      <recent name="com.shi.prometheus.db" />
+      <recent name="com.shi.prometheus.entity.dto" />
+      <recent name="com.shi.prometheus.business.cloud.netty" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyProjects\IdeaWork\prometheus-client\resources" />
+      <recent name="D:\MyProjects\IdeaWork\prometheus-client\images" />
+      <recent name="D:\MyProjects\IdeaWork\prometheus-client\resources\images" />
+      <recent name="D:\MyProjects\IdeaWork\prometheus-client\lib" />
+      <recent name="D:\MyProjects\IdeaWork\prometheus-client\src\com\shi\prometheus\entity\dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.RootBootStrap">
+    <configuration name="BarrierCSTStatusConstants" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shi.prometheus.common.BarrierCSTStatusConstants" />
+      <module name="prometheus-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shi.prometheus.db.cache.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RootBootStrap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shi.prometheus.RootBootStrap" />
+      <module name="prometheus-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shi.prometheus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shi.prometheus.TestTray" />
+      <module name="prometheus-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.shi.prometheus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.BarrierCSTStatusConstants" />
+      <item itemvalue="Application.RootBootStrap" />
+      <item itemvalue="Application.TestTray" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RootBootStrap" />
+        <item itemvalue="Application.TestTray" />
+        <item itemvalue="Application.BarrierCSTStatusConstants" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:SQLite - xwf.db" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a0246f3-486a-483c-811c-f1463a646c5a" name="Default Changelist" comment="" />
+      <created>1606545342143</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606545342143</updated>
+      <workItem from="1606545344058" duration="12928000" />
+      <workItem from="1606630750359" duration="20077000" />
+      <workItem from="1606654170743" duration="3682000" />
+      <workItem from="1606666677635" duration="432000" />
+      <workItem from="1606702770117" duration="12056000" />
+      <workItem from="1606788536710" duration="3304000" />
+      <workItem from="1606812707622" duration="1381000" />
+      <workItem from="1607390061872" duration="27386000" />
+      <workItem from="1607477121007" duration="21117000" />
+      <workItem from="1607563521931" duration="6051000" />
+      <workItem from="1607589841924" duration="5263000" />
+      <workItem from="1607648851036" duration="6140000" />
+      <workItem from="1607665094894" duration="11926000" />
+      <workItem from="1607912104770" duration="8531000" />
+      <workItem from="1608008905419" duration="10508000" />
+      <workItem from="1608081977616" duration="25231000" />
+      <workItem from="1608172351078" duration="16888000" />
+      <workItem from="1608446231867" duration="12058000" />
+      <workItem from="1608525995556" duration="6342000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="485" y="269" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1606637411761">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="485" y="269" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1536.834@0.0.1536.834" timestamp="1606637411761" />
+    <state x="386" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608095105385">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="386" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1608095105385" />
+    <state x="461" y="225" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608012700122">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="461" y="225" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1608012700122" />
+    <state x="704" y="195" key="#com.intellij.ide.util.MemberChooser" timestamp="1608456889564">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="704" y="195" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1608456889564" />
+    <state x="522" y="206" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1608184710911">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="522" y="206" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.834@0.0.1536.834" timestamp="1608184710911" />
+    <state x="1" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607497004310">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="1" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1607497004310" />
+    <state x="499" y="166" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608532011804">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="166" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1608532011804" />
+    <state x="549" y="174" key="FileChooserDialogImpl" timestamp="1608184720372">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1608184720372" />
+    <state width="1493" height="222" key="GridCell.Tab.0.bottom" timestamp="1608532513271">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608532513271" />
+    <state width="1493" height="222" key="GridCell.Tab.0.center" timestamp="1608532513271">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1608532513271" />
+    <state width="1493" height="222" key="GridCell.Tab.0.left" timestamp="1608532513271">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1608532513271" />
+    <state width="1493" height="222" key="GridCell.Tab.0.right" timestamp="1608532513271">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1608532513271" />
+    <state width="1493" height="231" key="GridCell.Tab.1.bottom" timestamp="1608461921867">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="231" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1608461921867" />
+    <state width="1493" height="231" key="GridCell.Tab.1.center" timestamp="1608461921866">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="231" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1608461921866" />
+    <state width="1493" height="231" key="GridCell.Tab.1.left" timestamp="1608461921866">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="231" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1608461921866" />
+    <state width="1493" height="231" key="GridCell.Tab.1.right" timestamp="1608461921867">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="231" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1608461921867" />
+    <state width="212" height="477" key="HiddenNamespacesPopup" timestamp="1606631875262">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="212" height="477" key="HiddenNamespacesPopup/0.0.1536.834@0.0.1536.834" timestamp="1606631875262" />
+    <state x="272" y="0" key="SettingsEditor" timestamp="1608184823244">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="272" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1608184823244" />
+    <state x="614" y="279" key="classpath-attribute-editor" timestamp="1608184809200">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="614" y="279" key="classpath-attribute-editor/0.0.1536.834@0.0.1536.834" timestamp="1608184809200" />
+    <state x="457" y="172" width="621" height="490" key="find.popup" timestamp="1608526301943">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="457" y="172" width="621" height="490" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1608526301943" />
+    <state x="178" y="33" key="new project wizard" timestamp="1606791498202">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="178" y="33" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1606791498202" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1608012298449">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1608012298449" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/shi/prometheus/business/barrier/service/WJBarrierEquipServiceImpl.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/shi/prometheus/business/cloud/netty/HeartbeatHandler.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/shi/prometheus/business/barrier/netty/BarrierNettyClient.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/shi/prometheus/business/barrier/netty/BarrierClientHandler.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/shi/prometheus/business/barrier/netty/BarrierNettyClient.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/shi/prometheus/business/barrier/netty/BarrierNettyClient.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/lib/netty-all-4.1.54.Final.jar!/io/netty/bootstrap/Bootstrap.class</url>
+          <line>78</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/lib/netty-all-4.1.54.Final.jar!/io/netty/bootstrap/Bootstrap.class</url>
+          <line>98</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
