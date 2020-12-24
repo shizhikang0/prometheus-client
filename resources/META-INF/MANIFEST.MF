@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Main-Class: com.shi.prometheus.RootBootStrap
-Class-Path: protobuf-java-3.13.0.jar sqlite-jdbc-3.32.3.2.jar lib/log4j-
- api-2.12.1.jar lib/netty-all-4.1.54.Final.jar lib/log4j-core-2.12.1.jar
-  lib/ormlite-core-5.0.jar lib/ormlite-jdbc-5.0.jar lib/lombok-1.18.16.j
- ar lib/sqljdbc4-4.0.jar lib/fastjson-1.2.75.jar lib/commons-lang3-3.11.
- jar lib/log4j-slf4j-impl-2.12.1.jar
+Class-Path: lib/ormlite-jdbc-5.0.jar lib/fastjson-1.2.75.jar lib/lombok-
+ 1.18.16.jar lib/log4j-core-2.12.1.jar lib/ormlite-core-5.0.jar lib/sqlj
+ dbc4-4.0.jar lib/protobuf-java-3.13.0.jar lib/commons-lang3-3.11.jar li
+ b/sqlite-jdbc-3.32.3.2.jar lib/log4j-slf4j-impl-2.12.1.jar lib/netty-al
+ l-4.1.54.Final.jar lib/log4j-api-2.12.1.jar
 

@@ -4,6 +4,7 @@ import com.shi.prometheus.business.channel.cache.ChannelListCache;
 import com.shi.prometheus.business.park.cache.CurrentParkCache;
 import com.shi.prometheus.db.cache.SqlServerConnectSetCache;
 import com.shi.prometheus.frame.ClientFrame;
+import com.shi.prometheus.utils.FileLockHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -21,6 +22,8 @@ public class RootBootStrap {
 
     public static void main(String[] args) {
         try {
+            //文件锁，保证程序单例运行
+            FileLockHelper.makeSingle();
             initDBStat();
             //启动Frame
             EventQueue.invokeLater(new Runnable() {

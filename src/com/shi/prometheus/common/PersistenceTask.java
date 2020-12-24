@@ -39,7 +39,7 @@ public class PersistenceTask<T> implements Runnable {
             BarrierCSTStatCache.getInstance().appendSignCode(barrierRDGStat.getRdg());
         }
 
-        new SqlLiteDao<T>().createOne(clazz, object);
+        new SqlLiteDao<T>().createOrUpdateOne(clazz, object);
         if (needPushToCloud && msg != null) {
             CloudNettyClient.getInstance().sendMsg(msg);
         }

@@ -7,7 +7,8 @@ package com.shi.prometheus.common;
  */
 public enum EquipTypeEnum {
     BARRIER(1, "道闸"),
-    CAMERA(2, "相机");
+    CAMERA(2, "相机"),
+    MONITOR(3, "监控终端");
 
     private Integer type;
 

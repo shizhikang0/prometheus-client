@@ -91,9 +91,9 @@ public class BarrierNettyClient {
                     equipConnect.setStatus(ConnectStatusConstants.SUCCESS);
                     Integer parkId = getParkId();
                     Park park = CurrentParkCache.getInstance().getParkById(parkId);
-                    ConnectMsg connectMsg = ConnectMsg.builder().parkName(park.getName()).parkNo(park.getParkNo()).channelName(getChannelName()).channelNo(getChannelNo()).equipType(MessageTypeConstants.EQUIP_BARRIER).equipIp(getIp()).connectStatus(ConnectStatusConstants.SUCCESS).build();
+                    EquipConnectMsg equipConnectMsg = EquipConnectMsg.builder().parkName(park.getName()).parkNo(park.getParkNo()).channelName(getChannelName()).channelNo(getChannelNo()).equipType(MessageTypeConstants.EQUIP_BARRIER).equipIp(getIp()).connectStatus(ConnectStatusConstants.SUCCESS).build();
                     MessageDTO.Message msg = MessageDTO.Message.newBuilder().setEquip(MessageTypeConstants.EQUIP_BARRIER).setType(MessageTypeConstants.TYPE_CONNECT).setLevel(MessageTypeConstants.LEVEL_MILD)
-                            .setJson(JSONObject.toJSON(connectMsg).toString())
+                            .setJson(JSONObject.toJSON(equipConnectMsg).toString())
                             .build();
                     PrometheusTaskExecutor.execute(new PersistenceTask<EquipConnect>(EquipConnect.class, equipConnect, true, msg));
                     lastFailTimes = 0;
@@ -103,10 +103,10 @@ public class BarrierNettyClient {
                     EquipConnect equipConnect = new EquipConnect();
                     equipConnect.setEquipType(EquipTypeEnum.BARRIER.getType());
                     equipConnect.setConnectTime(new Date());
-                    equipConnect.setStatus(ConnectStatusConstants.SUCCESS);
+                    equipConnect.setStatus(ConnectStatusConstants.FAIL);
                     Integer parkId = getParkId();
                     Park park = CurrentParkCache.getInstance().getParkById(parkId);
-                    ConnectMsg connectMsg = ConnectMsg.builder().parkName(park.getName()).parkNo(park.getParkNo()).channelName(getChannelName()).channelNo(getChannelNo()).equipType(MessageTypeConstants.EQUIP_BARRIER).equipIp(getIp()).connectStatus(ConnectStatusConstants.FAIL).build();
+                    EquipConnectMsg equipConnectMsg = EquipConnectMsg.builder().parkName(park.getName()).parkNo(park.getParkNo()).channelName(getChannelName()).channelNo(getChannelNo()).equipType(MessageTypeConstants.EQUIP_BARRIER).equipIp(getIp()).connectStatus(ConnectStatusConstants.FAIL).build();
                     int level = MessageTypeConstants.LEVEL_MILD;
                     if (lastFailTimes > ClientConfig.BARRIER_CONNECT_FAIL_ALARM_L3_CONTROL) {
                         level = MessageTypeConstants.LEVEL_CRITICAL;
@@ -114,7 +114,7 @@ public class BarrierNettyClient {
                         level = MessageTypeConstants.LEVEL_MODERATE;
                     }
                     MessageDTO.Message msg = MessageDTO.Message.newBuilder().setEquip(MessageTypeConstants.EQUIP_BARRIER).setType(MessageTypeConstants.TYPE_CONNECT).setLevel(level)
-                            .setJson(JSONObject.toJSON(connectMsg).toString())
+                            .setJson(JSONObject.toJSON(equipConnectMsg).toString())
                             .build();
                     PrometheusTaskExecutor.execute(new PersistenceTask<EquipConnect>(EquipConnect.class, equipConnect, true, msg));
                     EventLoop loop = channelFuture.channel().eventLoop();
@@ -123,7 +123,7 @@ public class BarrierNettyClient {
                         public void run() {
                             doConnect();
                         }
-                    }, 20L, TimeUnit.SECONDS);
+                    }, 10L, TimeUnit.SECONDS);
                 }
             }
         });

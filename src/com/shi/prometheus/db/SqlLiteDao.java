@@ -7,6 +7,7 @@ import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.shi.prometheus.RootBootStrap;
+import com.shi.prometheus.db.entity.SqlServerConnectSet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +24,7 @@ public class SqlLiteDao<T> {
 
     public static final Logger logger = LogManager.getLogger(SqlLiteDao.class);
 
-    public void createOne(Class<T> clazz, T one) {
+    public void createOrUpdateOne(Class<T> clazz, T one) {
         ConnectionSource connectionSource = null;
         try {
             connectionSource = new JdbcConnectionSource(DBUtils.getSqlLiteUrl());

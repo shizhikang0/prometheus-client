@@ -81,10 +81,10 @@ public class WJBarrierEquipServiceImpl extends AbstractBarrierEquipService {
 			String channelName = getBarrierNettyClient().getChannelName();
 			Integer channelNo = getBarrierNettyClient().getChannelNo();
 			String ip = getBarrierNettyClient().getIp();
-			RealTimeStatusMsg realTimeStatusMsg = RealTimeStatusMsg.builder().parkName(park.getName()).parkNo(park.getParkNo()).channelName(channelName)
+			EquipRealTimeStatusMsg equipRealTimeStatusMsg = EquipRealTimeStatusMsg.builder().parkName(park.getName()).parkNo(park.getParkNo()).channelName(channelName)
 					.channelNo(channelNo).equipType(MessageTypeConstants.EQUIP_BARRIER).equipIp(ip).statusCode(ConnectStatusConstants.SUCCESS).build();
 			MessageDTO.Message msg = MessageDTO.Message.newBuilder().setEquip(MessageTypeConstants.EQUIP_BARRIER).setType(MessageTypeConstants.TYPE_EQUIP_STATUS).setLevel(MessageTypeConstants.LEVEL_MILD)
-					.setJson(JSONObject.toJSON(realTimeStatusMsg).toString())
+					.setJson(JSONObject.toJSON(equipRealTimeStatusMsg).toString())
 					.build();
 			PrometheusTaskExecutor.execute(new PersistenceTask<BarrierCSTStat>(BarrierCSTStat.class, barrierCSTStat, true, msg));
 			barrierNettyClient.setUpload(false);

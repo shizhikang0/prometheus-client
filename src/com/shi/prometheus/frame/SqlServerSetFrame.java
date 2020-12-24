@@ -102,7 +102,7 @@ public class SqlServerSetFrame extends JFrame {
                 SqlServerConnectSetCache.SQL_SERVER_USER = userTextField.getText();
                 SqlServerConnectSetCache.SQL_SERVER_PASSWORD = passwordTextField.getText();
                 SqlServerConnectSet sqlServerConnectSet = new SqlServerConnectSet();
-                sqlServerConnectSet.setId(Integer.valueOf(SqlServerConnectSetCache.SQL_SERVER_CONNECT_SET_ID));
+                sqlServerConnectSet.setId(SqlServerConnectSetCache.SQL_SERVER_CONNECT_SET_ID);
                 sqlServerConnectSet.setPort(SqlServerConnectSetCache.SQL_SERVER_PORT);
                 sqlServerConnectSet.setDataBaseName(SqlServerConnectSetCache.SQL_SERVER_DATABASE);
                 sqlServerConnectSet.setUser(SqlServerConnectSetCache.SQL_SERVER_USER);

@@ -25,6 +25,9 @@ public class SqlServerConnectSet {
     @DatabaseField(columnName = "password")
     private String password;
 
+    @DatabaseField(columnName = "status")
+    private Integer status;
+
     public Integer getId() {
         return id;
     }
@@ -63,5 +66,13 @@ public class SqlServerConnectSet {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

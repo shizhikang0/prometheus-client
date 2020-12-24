@@ -3,7 +3,10 @@ package com.shi.prometheus.frame;
 import com.shi.prometheus.RootBootStrap;
 import com.shi.prometheus.business.barrier.boot.BarrierClientBoot;
 import com.shi.prometheus.business.cloud.netty.CloudNettyClient;
+import com.shi.prometheus.common.ConnectStatusConstants;
+import com.shi.prometheus.db.SqlLiteDao;
 import com.shi.prometheus.db.cache.SqlServerConnectSetCache;
+import com.shi.prometheus.db.entity.SqlServerConnectSet;
 import com.shi.prometheus.utils.PrometheusTaskExecutor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,6 +44,20 @@ public class ClientFrame extends JFrame {
 
     public ClientFrame() throws HeadlessException {
         initalizeFrame();
+        //开一个线程用来支持开机自启动
+        PrometheusTaskExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                SqlServerConnectSet sqlServerConnectSet = new SqlLiteDao<SqlServerConnectSet>().queryById(SqlServerConnectSet.class, SqlServerConnectSetCache.SQL_SERVER_CONNECT_SET_ID.toString());
+                if (sqlServerConnectSet != null && sqlServerConnectSet.getStatus() != null && sqlServerConnectSet.getStatus() == ConnectStatusConstants.SUCCESS) {
+                    EventQueue.invokeLater(new Runnable() {
+                        public void run() {
+                            startClient();
+                        }
+                    });
+                }
+            }
+        });
     }
 
     private void initalizeFrame() {
@@ -61,7 +78,7 @@ public class ClientFrame extends JFrame {
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                Object[] options ={"继续关闭", "取消","最小化至系统托盘"};
+                Object[] options ={"继续关闭", "取消","后台运行"};
                 int result = JOptionPane.showOptionDialog(getCurrentFrame(),"退出程序会导致停车场设备无法被监控，是否确认退出?", "警告",
                         JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
                 System.out.println("result:" + result);
@@ -88,11 +105,8 @@ public class ClientFrame extends JFrame {
             trayIcon.addMouseListener(new MouseAdapter() {
                 public void mouseClicked(MouseEvent e) {
                     if (e.getClickCount() == 1) {
-                        //双击托盘窗口再现
-                        //置此 frame 的状态。该状态表示为逐位掩码。
-                        setExtendedState(Frame.NORMAL); //正常化状态
-                        setVisible(true);
                         sysTray.remove(trayIcon);
+                        getCurrentFrame().setVisible(true);
                     }
                 }
             });
@@ -120,6 +134,12 @@ public class ClientFrame extends JFrame {
                         @Override
                         public void run() {
                             RootBootStrap.initDBStat();
+                            SqlServerConnectSet sqlServerConnectSet = new SqlLiteDao<SqlServerConnectSet>().queryById(SqlServerConnectSet.class, SqlServerConnectSetCache.SQL_SERVER_CONNECT_SET_ID.toString());
+                            if (sqlServerConnectSet == null) {
+                                return;
+                            }
+                            sqlServerConnectSet.setStatus(ConnectStatusConstants.SUCCESS);
+                            new SqlLiteDao<SqlServerConnectSet>().createOrUpdateOne(SqlServerConnectSet.class, sqlServerConnectSet);
                         }
                     });
                 } catch (SQLException ex) {
@@ -128,6 +148,17 @@ public class ClientFrame extends JFrame {
                         SqlServerSetFrame sqlServerSetFrame = new SqlServerSetFrame();
                         sqlServerSetFrame.setVisible(true);
                     }
+                    PrometheusTaskExecutor.execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            SqlServerConnectSet sqlServerConnectSet = new SqlLiteDao<SqlServerConnectSet>().queryById(SqlServerConnectSet.class, SqlServerConnectSetCache.SQL_SERVER_CONNECT_SET_ID.toString());
+                            if (sqlServerConnectSet == null) {
+                                return;
+                            }
+                            sqlServerConnectSet.setStatus(ConnectStatusConstants.FAIL);
+                            new SqlLiteDao<SqlServerConnectSet>().createOrUpdateOne(SqlServerConnectSet.class, sqlServerConnectSet);
+                        }
+                    });
                 } finally {
                     if (connection != null) {
                         try {
@@ -151,15 +182,24 @@ public class ClientFrame extends JFrame {
                 Object[] options ={"已测试通过，继续启动", "未完成测试，返回测试"};
                 int result = JOptionPane.showOptionDialog(getCurrentFrame(), "启动之前，请先测试数据库连接，保证数据库能够连接成功，否则获取不到道口数据！", "警告", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
                 if (result == JOptionPane.YES_OPTION) {
-                    startButton.setText("已启动");
-                    startButton.repaint();
-                    startButton.setEnabled(false);
-                    CloudNettyClient.getInstance().startMonitor();
-                    BarrierClientBoot.getInstance().connectAllBarrier();
+                    startClient();
                 }
             }
         });
         contentPane.add(startButton);
+    }
+
+    private void startClient() {
+        startButton.setText("已启动");
+        startButton.repaint();
+        startButton.setEnabled(false);
+        PrometheusTaskExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                CloudNettyClient.getInstance().startMonitor();
+                BarrierClientBoot.getInstance().connectAllBarrier();
+            }
+        });
     }
 
     public JFrame getCurrentFrame() {

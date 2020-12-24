@@ -49,4 +49,10 @@ public class HeartbeatHandler extends ChannelInboundHandlerAdapter {
         System.out.println("捕获的异常" + cause.getMessage());
         ctx.channel().close();
     }
+
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        super.channelRead(ctx, msg);
+        System.out.println("channelRead : " + msg);
+    }
 }

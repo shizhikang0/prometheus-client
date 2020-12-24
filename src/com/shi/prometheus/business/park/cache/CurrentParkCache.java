@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class CurrentParkCache {
     private HashMap<Integer, Park> parkHashMap = new HashMap<>();
+    private List<Park> parks;
 
     private CurrentParkCache() {
     }
@@ -22,7 +23,7 @@ public class CurrentParkCache {
     }
 
     public void initial() {
-        List<Park> parks =
+        parks =
                 new ParkSqlServerDao().getParksFromSqlServer();
         if (parks != null) {
             for (Park park : parks) {
@@ -33,6 +34,18 @@ public class CurrentParkCache {
 
     public Park getParkById(Integer id) {
         return parkHashMap.get(id);
+    }
+
+    public Park getRootPark() {
+        if (parks == null) {
+            return null;
+        }
+        for (Park park : parks) {
+            if (park.getState() == 1) {
+                return park;
+            }
+        }
+        return null;
     }
 
     private static class LazyLoader{

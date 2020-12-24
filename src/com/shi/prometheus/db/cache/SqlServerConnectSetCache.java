@@ -9,7 +9,7 @@ import com.shi.prometheus.db.entity.SqlServerConnectSet;
  * @Date: 2020/11/29
  */
 public class SqlServerConnectSetCache {
-    public static String SQL_SERVER_CONNECT_SET_ID = "1";
+    public static Integer SQL_SERVER_CONNECT_SET_ID = 1;
     public static boolean LOAD_DB_EXCEPTION = false;
     public static String SQL_SERVER_PORT;
     public static String SQL_SERVER_DATABASE;
@@ -17,7 +17,7 @@ public class SqlServerConnectSetCache {
     public static String SQL_SERVER_PASSWORD;
 
     static {
-        SqlServerConnectSet sqlServerConnectSet = new SqlLiteDao<SqlServerConnectSet>().queryById(SqlServerConnectSet.class, SQL_SERVER_CONNECT_SET_ID);
+        SqlServerConnectSet sqlServerConnectSet = new SqlLiteDao<SqlServerConnectSet>().queryById(SqlServerConnectSet.class, SQL_SERVER_CONNECT_SET_ID.toString());
         if (sqlServerConnectSet != null) {
             SQL_SERVER_PORT = sqlServerConnectSet.getPort();
             SQL_SERVER_DATABASE = sqlServerConnectSet.getDataBaseName();

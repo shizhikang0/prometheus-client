@@ -1,5 +1,6 @@
 package com.shi.prometheus.business.cloud.netty;
 
+import com.shi.prometheus.protobuf.MessageDTO;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -9,6 +10,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
+import java.net.InetSocketAddress;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -18,11 +20,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class CloudNettyClient  {
 
-    public static int time = 2 * 60 * 1000;
+    private int port = 23220;
 
-    private int port = 9091;
-
-    private String host = "192.168.0.142";
+    private String host = "asitcn.top";
     private SocketChannel socketChannel;
 
     private CloudNettyClient() {
@@ -33,14 +33,13 @@ public class CloudNettyClient  {
         EventLoopGroup group = new NioEventLoopGroup();
         bootstrap.group(group)
                 .channel(NioSocketChannel.class)
-                .remoteAddress(host, port)
                 .option(ChannelOption.SO_KEEPALIVE, true)
                 .option(ChannelOption.TCP_NODELAY, true)
                 .handler(new ClientHandlerInitilizer(this));
-        ChannelFuture future = bootstrap.connect();
+        ChannelFuture future = bootstrap.connect(new InetSocketAddress(host, port));
         //客户端断线重连逻辑
         future.addListener((ChannelFutureListener) future1 -> {
-            if (! future1.isSuccess()) {
+            if (!future1.isSuccess()) {
                 future1.channel().eventLoop().schedule(() -> connectCloud(), 20, TimeUnit.SECONDS);
             }
         });
@@ -51,7 +50,7 @@ public class CloudNettyClient  {
         connectCloud();
     }
 
-    public void sendMsg(Object msg) {
+    public void sendMsg(MessageDTO.Message msg) {
         socketChannel.writeAndFlush(msg);
     }
 
